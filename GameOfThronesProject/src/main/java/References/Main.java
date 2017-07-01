@@ -1,5 +1,7 @@
 package References;
 
+import game.SetupGame;
+
 import java.io.IOException;
 
 /**
@@ -11,13 +13,7 @@ public class Main {
 //        References references = new References();
 //        StandardVersion standardVersion = new StandardVersion(3, references);
 //        standardVersion.initalize();
-
-        TestingInitialize t = new TestingInitialize();
-
-        try {
-            t.convertJSON();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        SetupGame t = new SetupGame();
+        t.setUpLandTerritories();
     }
 }
