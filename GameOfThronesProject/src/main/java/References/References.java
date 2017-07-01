@@ -72,7 +72,8 @@ public class References {
     public static String QUEEN_OF_THORNS = "Queen of Thorns";
 
 
-    public static LandTerritory Castle_Black;
+    public static String Castle_Black_Name = "Castle Black";
+    public static String Castle_Black = "Castle Black";
     public static LandTerritory The_Stony_Shore;
     public static LandTerritory Karhold;
     public static LandTerritory Widows_Watch;

@@ -47,7 +47,7 @@ public class StandardHouseStartingStats {
     public static int GREYJOY_STARTING_SWORD = 1;
     public static int GREYJOY_STARTING_STARS = 3;
 
-    public static String TYRELL_STARTING_NAME = "Stark";
+    public static String TYRELL_STARTING_NAME = "Tyrell";
     public static int TYRELL_STARTING_SUPPLY = 1;
     public static int TYRELL_STARTING_POWER_TOKENS = 5;
     public static int TYRELL_STARTING_CASTLES = 1;
@@ -57,7 +57,7 @@ public class StandardHouseStartingStats {
     public static int TYRELL_STARTING_SWORD = 4;
     public static int TYRELL_STARTING_STARS = 3;
 
-    public static String MARTELL_STARTING_NAME = "Stark";
+    public static String MARTELL_STARTING_NAME = "Martell";
     public static int MARTELL_STARTING_SUPPLY = 1;
     public static int MARTELL_STARTING_POWER_TOKENS = 5;
     public static int MARTELL_STARTING_CASTLES = 1;
@@ -66,9 +66,6 @@ public class StandardHouseStartingStats {
     public static int MARTELL_STARTING_THRONE = 3;
     public static int MARTELL_STARTING_SWORD = 4;
     public static int MARTELL_STARTING_STARS = 3;
-
-
-
 
     //Also do starting locations and such
 }

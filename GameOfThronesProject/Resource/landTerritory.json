@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Castle Black",
+    "numSupply": 0,
+    "numCrowns": 1,
+    "numGarrison": 0,
+    "isOccupied": false,
+    "numSupply": 0,
+    "numCrowns": 1,
+    "powerToken": false,
+    "hasCastle": false,
+    "hasStronghold": false,
+    "houseOccupied": null,
+    "orderToken": null,
+    "knights": [],
+    "infantry": [],
+    "siegeEngines": [],
+    "landConnections": [
+      "Winterfell",
+      "Karhold"
+    ]
+  },
+  {
+    "name": "Winterfell",
+    "numSupply": 1,
+    "numCrowns": 1,
+    "numGarrison": 0,
+    "isOccupied": false,
+    "numSupply": 0,
+    "numCrowns": 1,
+    "powerToken": false,
+    "hasCastle": true,
+    "hasStronghold": false,
+    "houseOccupied": null,
+    "orderToken": null,
+    "knights": [],
+    "infantry": [],
+    "siegeEngines": [],
+    "landConnections": [
+      "Castle Black",
+      "Karhold",
+      "White Harbor",
+      "Moat Cailin",
+      "The Stoney Shore"
+    ]
+  }
+]

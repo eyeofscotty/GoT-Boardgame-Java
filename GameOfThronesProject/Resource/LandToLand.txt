@@ -28,7 +28,7 @@ Kingswood: The_Reach, Kings_Landing, The_Boneway, Storms_End
 Storms_End: The_Boneway, Kingswood
 The_Boneway: Kingswood, Storms_End, The_Reach, Dornish_Marches, Princes_Pass, Yronwood
 Oldtown: Highgarden, Dornish_Marches, Three_Towers
-Dornish_Marches: The_Reach, Highgarden, Oldtown, THe_Boneway, Three_Towers, Princes_Pass
+Dornish_Marches: The_Reach, Highgarden, Oldtown, The_Boneway, Three_Towers, Princes_Pass
 Three_Towers: Oldtown, Dornish_Marches, Princes_Pass
 Princes_Pass: The_Boneway, Dornish_Marches, Three_Towers, Yronwood, Starfall
 The_Arbor: NA
