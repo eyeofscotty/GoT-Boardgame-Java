@@ -7,6 +7,7 @@ import houses.House;
 import tokens.OrderToken;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Scott on 1/23/2017.
@@ -27,13 +28,12 @@ public class LandTerritory implements Territory {
     //Do something for garrisons and neutral tokens like kingslanding/eyrie
     //Also do stuff for ports
 
-    private ArrayList<String> landConnections;
-    ArrayList<Knight> knights = new ArrayList<Knight>();
-    ArrayList<Infantry> infantry = new ArrayList<Infantry>();
-    ArrayList<SiegeEngine> siegeEngines = new ArrayList<SiegeEngine>();
+    private List<String> landConnections;
+    private List<Knight> knights = new ArrayList<Knight>();
+    private List<Infantry> infantry = new ArrayList<Infantry>();
+    private List<SiegeEngine> siegeEngines = new ArrayList<SiegeEngine>();
 
-    public LandTerritory(String name, int numSupply, int numCrowns, int numGarrison, ArrayList<Infantry> infantry, ArrayList<Knight> knights, ArrayList<SiegeEngine> siegeEngines, boolean powerToken, boolean hasCastle, boolean hasStronghold, boolean isOccupied, House houseOccupied, OrderToken orderToken, ArrayList<String> landConnections){
-
+    public LandTerritory(String name, int numSupply, int numCrowns, int numGarrison, List<Infantry> infantry, List<Knight> knights, List<SiegeEngine> siegeEngines, boolean powerToken, boolean hasCastle, boolean hasStronghold, boolean isOccupied, House houseOccupied, OrderToken orderToken, List<String> landConnections){
         this.name = name;
         this.numGarrison = numGarrison;
         this.powerToken = powerToken;
@@ -54,7 +54,7 @@ public class LandTerritory implements Territory {
 
     }
 
-    public boolean isPowerToken() {
+    public boolean getPowerToken() {
         return powerToken;
     }
 
@@ -112,9 +112,7 @@ public class LandTerritory implements Territory {
         this.hasStronghold = hasStronghold;
     }
 
-    public boolean getIsOccupied() {
-        return isOccupied;
-    }
+    public boolean getIsOccupied() {return this.houseOccupied != null ? true : false; }
 
     public void setOccupied(boolean occupied) {
         isOccupied = occupied;
@@ -136,55 +134,55 @@ public class LandTerritory implements Territory {
         this.orderToken = orderToken;
     }
 
-    public ArrayList<String> getLandConnections() {
+    public List<String> getLandConnections() {
         return landConnections;
+    }
+
+    public void setLandConnections(List<String> landConnections) {
+        this.landConnections = landConnections;
+    }
+
+    public List<Knight> getKnights() {
+        return knights;
+    }
+
+    public void setKnights(List<Knight> knights) {
+        this.knights = knights;
+    }
+
+    public List<Infantry> getInfantry() {
+        return infantry;
+    }
+
+    public void setInfantry(List<Infantry> infantry) {
+        this.infantry = infantry;
+    }
+
+    public List<SiegeEngine> getSiegeEngines() {
+        return siegeEngines;
+    }
+
+    public void setSiegeEngines(List<SiegeEngine> siegeEngines) {
+        this.siegeEngines = siegeEngines;
     }
 
     @Override
     public String toString() {
         return "LandTerritory{" +
-                "name='" + name + '\'' +
-                ", numSupply=" + numSupply +
-                ", numCrowns=" + numCrowns +
-                ", hasCastle=" + hasCastle +
-                ", hasStronghold=" + hasStronghold +
-                ", isOccupied=" + isOccupied +
-                ", houseOccupied=" + houseOccupied +
-                ", orderToken=" + orderToken +
-                ", powerToken=" + powerToken +
-                ", numGarrison=" + numGarrison +
-                ", landConnections=" + landConnections +
-                ", knights=" + knights +
-                ", infantry=" + infantry +
-                ", siegeEngines=" + siegeEngines +
+                "name='" + getName() + '\'' +
+                ", numSupply=" + getNumSupply() +
+                ", numCrowns=" + getNumCrowns() +
+                ", hasCastle=" + getHasCastle() +
+                ", hasStronghold=" + getHasStronghold() +
+                ", isOccupied=" + getIsOccupied() +
+                ", houseOccupied=" + getHouseOccupied() +
+                ", orderToken=" + getOrderToken() +
+                ", powerToken=" + getPowerToken() +
+                ", numGarrison=" + getNumGarrison() +
+                ", landConnections=" + getLandConnections() +
+                ", knights=" + getKnights() +
+                ", infantry=" + getInfantry() +
+                ", siegeEngines=" + getSiegeEngines() +
                 '}';
-    }
-
-    public void setLandConnections(ArrayList<String> landConnections) {
-        this.landConnections = landConnections;
-    }
-
-    public ArrayList<Knight> getKnights() {
-        return knights;
-    }
-
-    public void setKnights(ArrayList<Knight> knights) {
-        this.knights = knights;
-    }
-
-    public ArrayList<Infantry> getInfantry() {
-        return infantry;
-    }
-
-    public void setInfantry(ArrayList<Infantry> infantry) {
-        this.infantry = infantry;
-    }
-
-    public ArrayList<SiegeEngine> getSiegeEngines() {
-        return siegeEngines;
-    }
-
-    public void setSiegeEngines(ArrayList<SiegeEngine> siegeEngines) {
-        this.siegeEngines = siegeEngines;
     }
 }

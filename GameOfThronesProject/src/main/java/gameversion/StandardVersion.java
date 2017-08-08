@@ -1,66 +1,136 @@
 package gameversion;
 
-//import References.References;
 import References.*;
+import helper.ArmyHelper;
 import houses.*;
+import locations.LandTerritory;
+import locations.SeaTerritory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Scott on 1/27/2017.
  */
 public class StandardVersion implements GameVersion {
 
-    private References references;
+    private int MAX_VICTORY_POINTS = 7;
+    private int MAX_TURNS = 10;
+
     private int numberOfPlayers;
-    private int maxVictoryPoints = References.STANDARD_VICTORY_POINTS;
-    private int maxTurns = References.STANDARD_MAX_TURNS;
+    HashMap<String, LandTerritory> landTerritoryMap;
+    HashMap<String, SeaTerritory> seaTerritoryMap;
+    HashMap<String, House> houseMap;
+    ArmyHelper armyHelper = new ArmyHelper();
 
-    public StandardVersion(int numberOfPlayers, References references){
+    public StandardVersion(int numberOfPlayers, HashMap<String, LandTerritory> landTerritoryMap, HashMap<String, SeaTerritory> seaTerritoryMap){
         this.numberOfPlayers = numberOfPlayers;
-        this.references = references;
+        this.landTerritoryMap = landTerritoryMap;
+        this.seaTerritoryMap = seaTerritoryMap;
     }
 
-    public void initalize(){
-//        determineHouses();
-        setupTerritories();
+    public StandardVersion(){}
+
+    private void setUpLandTerritory(LandTerritory landTerritory, House house, int infantry, int knights, int siege){
+        landTerritory.setInfantry(armyHelper.initializeInfantry(infantry));
+        landTerritory.setKnights(armyHelper.initalizeKnight(knights));
+        landTerritory.setSiegeEngines(armyHelper.initializeSiege(siege));
+        landTerritory.setHouseOccupied(house);
     }
 
-
-
-    private void setupTerritories(){
-        //Do something here to setup all the land connections
-        //And initilizae land territories
-
+    private void setUpSeaTerritory(SeaTerritory seaTerritory, House house, int ship){
+        seaTerritory.setShips(armyHelper.initializeShip(ship));
+        seaTerritory.setHouseOccupied(house);
     }
 
+    public HashMap<String, House> assignStartingPositions() {
+        //Make sure to do validation that number of players is between 3-6
+        switch (this.numberOfPlayers){
+            case 3:
+                houseMap = initializeThreePlayers();
+                //ToDO obvi make methods for each house
+                //ToDO make helper method class that takes num of infantry and loops through to make list
+                setUpLandTerritory(landTerritoryMap.get(References.KARHOLD), houseMap.get(References.STARK), 2,1,0);
+                setUpLandTerritory(landTerritoryMap.get(References.WINTERFELL), houseMap.get(References.LANNISTER), 1,1,0);
+                setUpLandTerritory(landTerritoryMap.get(References.CASTLE_BLACK), houseMap.get(References.BARATHEON), 2,2,0);
+                break;
 
+            case 4:
+                houseMap = initializeFourPlayers();
+                //TODO Add land and sea setup
+                break;
+            case 5:
+                houseMap = initializeFivePlayers();
+                //TODO Add land and sea setup
+                break;
 
-//    private void determineHouses(){
-//        this.references.allHouses = new ArrayList<House>();
-//        switch (this.numberOfPlayers){
-//            case 3:
-//                this.references.Stark = new HouseStark("Stark", 2, 5, 1, 1, 2, 3, 1, 2);
-//                this.references.Lannister = new HouseLannister("Lannister", 2, 5, 0, 1, 1, 2, 3, 3);
-//                this.references.Baratheon = new HouseBaratheon("Baratheon", 2, 5, 0, 1, 3, 1, 2, 1);
-//                this.references.allHouses.add(this.references.Stark);
-//                this.references.allHouses.add(this.references.Lannister);
-//                this.references.allHouses.add(this.references.Baratheon);
-//                break;
-//
-//            case 4:
-//                this.references.Stark = new HouseStark("Stark", 2, 5, 1, 1, 2, 3, 2, 3);
-//                this.references.Lannister = new HouseLannister("Lannister", 2, 5, 0, 1, 1, 2, 6, 3);
-//                this.references.Baratheon = new HouseBaratheon("Baratheon", 2, 5, 0, 1, 3, 1, 2, 1);
-//                this.references.Greyjoy = new HouseGreyjoy("Greyjoy", 2, 5, 0, 1, 4, 4, 1, 0);
-//                this.references.allHouses.add(this.references.Stark);
-//                this.references.allHouses.add(this.references.Lannister);
-//                this.references.allHouses.add(this.references.Baratheon);
-//                this.references.allHouses.add(this.references.Greyjoy);
-//                break;
-//        }
-//
-//    }
+            case 6:
+                houseMap = initializeSixPlayers();
+                //TODO Add land and sea setup
+                break;
+        }
+        return houseMap;
+    }
 
+    private HashMap<String, House> initializeThreePlayers(){
+        HashMap<String, House> houses = new HashMap<String, House>();
+        houses.put(References.STARK, new HouseStark());
+        houses.put(References.LANNISTER, new HouseLannister());
+        houses.put(References.BARATHEON, new HouseBaratheon());
+        return houses;
+    }
 
+    private HashMap<String, House> initializeFourPlayers(){
+        HashMap<String, House> houses = new HashMap<String, House>();
+        houses.put(References.STARK, new HouseStark());
+        houses.put(References.LANNISTER, new HouseLannister());
+        houses.put(References.BARATHEON, new HouseBaratheon());
+        houses.put(References.GREYJOY, new HouseGreyjoy());
+        return houses;
+    }
+
+    private HashMap<String, House> initializeFivePlayers(){
+        HashMap<String, House> houses = new HashMap<String, House>();
+        houses.put(References.STARK, new HouseStark());
+        houses.put(References.LANNISTER, new HouseLannister());
+        houses.put(References.BARATHEON, new HouseBaratheon());
+        houses.put(References.GREYJOY, new HouseGreyjoy());
+        houses.put(References.TYRELL, new HouseTyrell());
+        return houses;
+    }
+
+    private HashMap<String, House> initializeSixPlayers(){
+        HashMap<String, House> houses = new HashMap<String, House>();
+        houses.put(References.STARK, new HouseStark());
+        houses.put(References.LANNISTER, new HouseLannister());
+        houses.put(References.BARATHEON, new HouseBaratheon());
+        houses.put(References.GREYJOY, new HouseGreyjoy());
+        houses.put(References.TYRELL, new HouseTyrell());
+        houses.put(References.MARTELL, new HouseMartell());
+        return houses;
+    }
+
+    public int getMaxVictoryPoints(){
+        return MAX_VICTORY_POINTS;
+    }
+
+    public int getMaxTurns(){
+        return MAX_TURNS;
+    }
+
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        this.numberOfPlayers = numberOfPlayers;
+    }
+
+    public void setLandTerritoryMap(HashMap<String, LandTerritory> landTerritoryMap) {
+        this.landTerritoryMap = landTerritoryMap;
+    }
+
+    public void setSeaTerritoryMap(HashMap<String, SeaTerritory> seaTerritoryMap) {
+        this.seaTerritoryMap = seaTerritoryMap;
+    }
+
+    public void setHouseMap(HashMap<String, House> houseMap) {
+        this.houseMap = houseMap;
+    }
 }

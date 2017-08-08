@@ -19,11 +19,6 @@ import java.util.ArrayList;
  */
 public class References {
 
-    public static int STANDARD_MAX_TURNS = 10;
-    public static int STANDARD_VICTORY_POINTS = 7;
-
-
-
     public static String STANNIS_BARATHEON = "Stannis Baratheon";
     public static String RENLY_BARATHEON = "Renly Baratheon";
     public static String SER_DAVOS_SEAWORTH = "Ser Davos Seaworth";
@@ -71,46 +66,44 @@ public class References {
     public static String MARGAERY_TYRELL = "Margaery Tyrell";
     public static String QUEEN_OF_THORNS = "Queen of Thorns";
 
-
-    public static String Castle_Black_Name = "Castle Black";
-    public static String Castle_Black = "Castle Black";
-    public static LandTerritory The_Stony_Shore;
-    public static LandTerritory Karhold;
-    public static LandTerritory Widows_Watch;
-    public static LandTerritory White_Harbor;
-    public static LandTerritory Winterfell;
-    public static LandTerritory Moat_Cailin;
-    public static LandTerritory Greywater_Watch;
-    public static LandTerritory Flints_Fingers;
-    public static LandTerritory Seagard;
-    public static LandTerritory Pyke;
-    public static LandTerritory The_Twins;
-    public static LandTerritory The_Fingers;
-    public static LandTerritory The_Mountains_Of_The_Moon;
-    public static LandTerritory The_Eyrie;
-    public static LandTerritory Riverrun;
-    public static LandTerritory Lannisport;
-    public static LandTerritory Stoney_Sept;
-    public static LandTerritory Harrenhal;
-    public static LandTerritory Crackclaw_Point;
-    public static LandTerritory Searoad_Marches;
-    public static LandTerritory Blackwater;
-    public static LandTerritory Kings_Landing;
-    public static LandTerritory Dragonstone;
-    public static LandTerritory Highgarden;
-    public static LandTerritory The_Reach;
-    public static LandTerritory Kingswood;
-    public static LandTerritory Storms_End;
-    public static LandTerritory The_Boneway;
-    public static LandTerritory Dornish_Marches;
-    public static LandTerritory Oldtown;
-    public static LandTerritory Three_Towers;
-    public static LandTerritory Princes_Pass;
-    public static LandTerritory Yronwood;
-    public static LandTerritory Sunspear;
-    public static LandTerritory Starfall;
-    public static LandTerritory Salt_Shore;
-    public static LandTerritory The_Arbor;
+    public static String CASTLE_BLACK = "Castle Black";
+    public static String THE_STONEY_SHORE = "The Stoney Shore";
+    public static String KARHOLD = "Karhold";
+    public static String WIDOWS_WATCH = "Widows Watch";
+    public static String WHITE_HARBOR = "White Harbor";
+    public static String WINTERFELL = "Winterfell";
+    public static String MOAT_CAILIN = "Moat Cailin";
+    public static String GREYWAYTER_WATCH  = "Greywater Watch";
+    public static String FLINTS_FINGERS = "Flints Fingers";
+    public static String SEAGARD = "Seagard";
+    public static String PYKE = "Pyke";
+    public static String THE_TWINS = "The Twins";
+    public static String THE_FINGERS = "The Fingers";
+    public static String THE_MOUNTAINS_OF_THE_MOON = "The Mountains Of The Moon";
+    public static String THE_EYRIE = "The Eyrie";
+    public static String RIVERRUN = "Rivverun";
+    public static String LANNISPORT = "Lannisport";
+    public static String STONEY_SEPT = "Stoney Sept";
+    public static String HARRENHAL = "Harrenhal";
+    public static String CRACKCLAW_POINT = "Crackclaw Point";
+    public static String SEAROAD_MARCHES = "Searoad Marches";
+    public static String BLACKWATER = "Blackwater";
+    public static String KINGS_LANDING = "Kings Landing";
+    public static String DRAGONSTONE = "Dragonstone";
+    public static String HIGHGARDEN = "Highgarden";
+    public static String THE_REACH = "The Reach";
+    public static String KINGSWOOD = "Kingswood";
+    public static String STORMS_END = "Storms End";
+    public static String THE_BONEWAY = "The Boneway";
+    public static String DORNISH_MARCHES = "Dornish Marches";
+    public static String OLDTOWN = "Oldtown";
+    public static String THREE_TOWERS = "Three Towers";
+    public static String PRINCES_PASS = "Princes Pass";
+    public static String YRONWOOD = "Yronwood";
+    public static String SUNSPEAR = "Sunspear";
+    public static String STARFALL = "Starfall";
+    public static String SALT_SHORE = "Salt Shore";
+    public static String THE_ARBOR = "The Arbor";
 
     public static SeaTerritory The_Shivering_Sea;
     public static SeaTerritory The_Narrow_Sea;
@@ -125,13 +118,14 @@ public class References {
     public static SeaTerritory Ironmans_Bay;
     public static SeaTerritory Bay_Of_Ice;
 
-    public HouseStark Stark;
-    public HouseBaratheon Baratheon;
-    public HouseGreyjoy Greyjoy;
-    public HouseLannister Lannister;
-    public HouseTyrell Tyrell;
-    public HouseMartell Martell;
-    public HouseNeutral Neutral = new HouseNeutral();
+    public static String STARK = "Stark";
+    public static String BARATHEON = "Baratheon";
+    public static String GREYJOY = "Greyjoy";
+    public static String LANNISTER = "Lannister";
+    public static String TYRELL = "Tyrell";
+    public static String MARTELL = "Martell";
+    public static String ARRYN = "Arryn";
+    public static String BOLTON = "Bolton";
 
     public ArrayList<House> allHouses;
 

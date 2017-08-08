@@ -1,9 +1,19 @@
 package gameversion;
 
-/**
- * Created by Scott on 1/27/2017.
- */
-public interface GameVersion {
-    
+import helper.ArmyHelper;
+import houses.House;
+import locations.LandTerritory;
+import locations.SeaTerritory;
 
+import java.util.HashMap;
+
+public interface GameVersion {
+
+    int getMaxTurns();
+    int getMaxVictoryPoints();
+    HashMap<String, House> assignStartingPositions();
+    void setNumberOfPlayers(int numberOfPlayers);
+    void setLandTerritoryMap(HashMap<String, LandTerritory> landTerritoryMap);
+    void setSeaTerritoryMap(HashMap<String, SeaTerritory> seaTerritoryMap);
+    void setHouseMap(HashMap<String, House> houseMap) ;
 }

@@ -5,6 +5,7 @@ import houses.House;
 import tokens.OrderToken;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Scott on 1/23/2017.
@@ -16,10 +17,10 @@ public class SeaTerritory implements Territory {
     boolean isOccupied;
     House houseOccupied;
     OrderToken orderToken;
-    ArrayList<String> landConnections, seaConnections;
-    ArrayList<Ship> ships = new ArrayList<Ship>();
+    List<String> landConnections, seaConnections;
+    List<Ship> ships = new ArrayList<Ship>();
 
-    public SeaTerritory(String name, int numShips, House houseOccupied, boolean isOccupied, OrderToken orderToken, ArrayList<String> landConnections, ArrayList<String> seaConnections, ArrayList<Ship> ships) {
+    public SeaTerritory(String name, int numShips, House houseOccupied, boolean isOccupied, OrderToken orderToken, ArrayList<String> landConnections, List<String> seaConnections, List<Ship> ships) {
         this.name = name;
         this.numShips = numShips;
         this.houseOccupied = houseOccupied;
@@ -43,11 +44,11 @@ public class SeaTerritory implements Territory {
         return this.ships.size();
     }
 
-    public void setShips(ArrayList<Ship> ships){
+    public void setShips(List<Ship> ships){
         this.ships = ships;
     }
 
-    public ArrayList<Ship> getShips(){
+    public List<Ship> getShips(){
         return this.ships;
     }
 
@@ -75,11 +76,11 @@ public class SeaTerritory implements Territory {
         }
     }
 
-    public ArrayList<String> getSeaConnections() {
+    public List<String> getSeaConnections() {
         return this.seaConnections;
     }
 
-    public ArrayList<String> getLandConnections() {
+    public List<String> getLandConnections() {
         return this.landConnections;
     }
 
