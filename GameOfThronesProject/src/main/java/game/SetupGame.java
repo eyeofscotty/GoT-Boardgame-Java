@@ -37,6 +37,8 @@ public class SetupGame {
         gameVersion.setNumberOfPlayers(NUM_PLAYERS);
         gameVersion.setLandTerritoryMap(landTerritoryNamesMap);
         gameVersion.setSeaTerritoryMap(seaTerritoryNamesMap);
+        //This is where houseMap comes from, dependant on GameVersion
+        //Also initializes starting positions
         houseMap = gameVersion.assignStartingPositions();
     }
 

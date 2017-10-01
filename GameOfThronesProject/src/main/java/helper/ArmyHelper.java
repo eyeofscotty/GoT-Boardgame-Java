@@ -15,6 +15,8 @@ public class ArmyHelper {
 
     public ArmyHelper(){}
 
+
+    //only for initalization
     public List<Infantry> initializeInfantry(int numAddedInfantry){
         List<Infantry> addedInfantry = new ArrayList<Infantry>();
         for(int i = 0; i < numAddedInfantry; i ++){
@@ -23,6 +25,7 @@ public class ArmyHelper {
         return addedInfantry;
     }
 
+    //only for initalization
     public List<Knight> initalizeKnight(int numAddedKnight){
         List<Knight> addedKnight = new ArrayList<Knight>();
         for(int i = 0; i < numAddedKnight; i ++){
@@ -31,6 +34,7 @@ public class ArmyHelper {
         return addedKnight;
     }
 
+    //only for initalization
     public List<SiegeEngine> initializeSiege(int numAddedSiege){
         List<SiegeEngine> addedSiege = new ArrayList<SiegeEngine>();
         for(int i = 0; i < numAddedSiege; i ++){
@@ -39,6 +43,7 @@ public class ArmyHelper {
         return addedSiege;
     }
 
+    //only for initalization
     public List<Ship> initializeShip(int numAddedShip){
         List<Ship> addedShip = new ArrayList<Ship>();
         for(int i = 0; i < numAddedShip; i ++){
