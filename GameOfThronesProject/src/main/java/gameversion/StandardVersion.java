@@ -1,6 +1,6 @@
 package gameversion;
 
-import References.*;
+import References.ReferenceConstant;
 import helper.ArmyHelper;
 import houses.*;
 import locations.LandTerritory;
@@ -50,9 +50,9 @@ public class StandardVersion implements GameVersion {
                 houseMap = initializeThreePlayers();
                 //ToDO obvi make methods for each house
                 //ToDO make helper method class that takes num of infantry and loops through to make list
-                setUpLandTerritory(landTerritoryMap.get(References.KARHOLD), houseMap.get(References.STARK), 2,1,0);
-                setUpLandTerritory(landTerritoryMap.get(References.WINTERFELL), houseMap.get(References.LANNISTER), 1,1,0);
-                setUpLandTerritory(landTerritoryMap.get(References.CASTLE_BLACK), houseMap.get(References.BARATHEON), 2,2,0);
+                setUpLandTerritory(landTerritoryMap.get(ReferenceConstant.KARHOLD), houseMap.get(ReferenceConstant.STARK), 2,1,0);
+                setUpLandTerritory(landTerritoryMap.get(ReferenceConstant.WINTERFELL), houseMap.get(ReferenceConstant.LANNISTER), 1,1,0);
+                setUpLandTerritory(landTerritoryMap.get(ReferenceConstant.CASTLE_BLACK), houseMap.get(ReferenceConstant.BARATHEON), 2,2,0);
                 break;
 
             case 4:
@@ -74,39 +74,39 @@ public class StandardVersion implements GameVersion {
 
     private HashMap<String, House> initializeThreePlayers(){
         HashMap<String, House> houses = new HashMap<String, House>();
-        houses.put(References.STARK, new HouseStark());
-        houses.put(References.LANNISTER, new HouseLannister());
-        houses.put(References.BARATHEON, new HouseBaratheon());
+        houses.put(ReferenceConstant.STARK, new HouseStark());
+        houses.put(ReferenceConstant.LANNISTER, new HouseLannister());
+        houses.put(ReferenceConstant.BARATHEON, new HouseBaratheon());
         return houses;
     }
 
     private HashMap<String, House> initializeFourPlayers(){
         HashMap<String, House> houses = new HashMap<String, House>();
-        houses.put(References.STARK, new HouseStark());
-        houses.put(References.LANNISTER, new HouseLannister());
-        houses.put(References.BARATHEON, new HouseBaratheon());
-        houses.put(References.GREYJOY, new HouseGreyjoy());
+        houses.put(ReferenceConstant.STARK, new HouseStark());
+        houses.put(ReferenceConstant.LANNISTER, new HouseLannister());
+        houses.put(ReferenceConstant.BARATHEON, new HouseBaratheon());
+        houses.put(ReferenceConstant.GREYJOY, new HouseGreyjoy());
         return houses;
     }
 
     private HashMap<String, House> initializeFivePlayers(){
         HashMap<String, House> houses = new HashMap<String, House>();
-        houses.put(References.STARK, new HouseStark());
-        houses.put(References.LANNISTER, new HouseLannister());
-        houses.put(References.BARATHEON, new HouseBaratheon());
-        houses.put(References.GREYJOY, new HouseGreyjoy());
-        houses.put(References.TYRELL, new HouseTyrell());
+        houses.put(ReferenceConstant.STARK, new HouseStark());
+        houses.put(ReferenceConstant.LANNISTER, new HouseLannister());
+        houses.put(ReferenceConstant.BARATHEON, new HouseBaratheon());
+        houses.put(ReferenceConstant.GREYJOY, new HouseGreyjoy());
+        houses.put(ReferenceConstant.TYRELL, new HouseTyrell());
         return houses;
     }
 
     private HashMap<String, House> initializeSixPlayers(){
         HashMap<String, House> houses = new HashMap<String, House>();
-        houses.put(References.STARK, new HouseStark());
-        houses.put(References.LANNISTER, new HouseLannister());
-        houses.put(References.BARATHEON, new HouseBaratheon());
-        houses.put(References.GREYJOY, new HouseGreyjoy());
-        houses.put(References.TYRELL, new HouseTyrell());
-        houses.put(References.MARTELL, new HouseMartell());
+        houses.put(ReferenceConstant.STARK, new HouseStark());
+        houses.put(ReferenceConstant.LANNISTER, new HouseLannister());
+        houses.put(ReferenceConstant.BARATHEON, new HouseBaratheon());
+        houses.put(ReferenceConstant.GREYJOY, new HouseGreyjoy());
+        houses.put(ReferenceConstant.TYRELL, new HouseTyrell());
+        houses.put(ReferenceConstant.MARTELL, new HouseMartell());
         return houses;
     }
 

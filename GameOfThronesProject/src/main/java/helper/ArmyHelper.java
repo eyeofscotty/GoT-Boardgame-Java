@@ -8,9 +8,6 @@ import army.SiegeEngine;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Scott on 8/7/2017.
- */
 public class ArmyHelper {
 
     public ArmyHelper(){}

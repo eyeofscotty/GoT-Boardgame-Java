@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Created by Scott on 1/23/2017.
  */
+@Deprecated
 public class SeaTerritory implements Territory {
 
     String name;

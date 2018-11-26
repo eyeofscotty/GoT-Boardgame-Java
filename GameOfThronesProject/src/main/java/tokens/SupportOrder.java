@@ -3,15 +3,18 @@ package tokens;
 /**
  * Created by Scott on 1/23/2017.
  */
-public class SupportOrder implements OrderToken {
+public class SupportOrder extends OrderToken {
 
     boolean star;
     boolean isAvailable;
 
-    public SupportOrder(boolean star, boolean isAvailable) {
-        this.isAvailable = isAvailable;
-        this.star = star;
+    SupportOrder(){
+
     }
+//    public SupportOrder(boolean star, boolean isAvailable) {
+//        this.isAvailable = isAvailable;
+//        this.star = star;
+//    }
 
 //        public boolean Equals(OrderToken orderToken)
 //        {

@@ -8,6 +8,7 @@ import gameversion.GameVersion;
 import gameversion.StandardVersion;
 import houses.House;
 import locations.LandTerritory;
+import locations.LandTerritoryImpl;
 import locations.SeaTerritory;
 import locations.Territory;
 
@@ -20,7 +21,7 @@ import java.util.HashMap;
  * Created by Scott on 7/1/2017.
  */
 public class SetupGame {
-    public HashMap<String, LandTerritory> landTerritoryNamesMap;
+    public HashMap<String, LandTerritoryImpl> landTerritoryNamesMap;
     public HashMap<String, SeaTerritory> seaTerritoryNamesMap;
     public HashMap<String, House> houseMap;
     private int NUM_PLAYERS;
@@ -44,16 +45,26 @@ public class SetupGame {
 
     public void setUp(){
         setUpLandTerritories();
+        setUpTerritoryConnections();
         setUpSeaTerritories();
         assignStartingTerritories();
+    }
+
+    public void setUpTerritoryConnections(){
+        for(LandTerritoryImpl landTerritory: landTerritoryNamesMap.values()){
+            for(String territoryName: landTerritory.getConnections()){
+                LandTerritoryImpl territoryToAdd = landTerritoryNamesMap.get(territoryName);
+                landTerritory.getLandConnections().add(territoryToAdd);
+            }
+        }
     }
 
     private void setUpLandTerritories(){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            LandTerritory[] listOfLandTerritories =  mapper.readValue(new File("Resource\\landTerritory.json"), new TypeReference<LandTerritory[]>(){});
-            landTerritoryNamesMap = new HashMap<String, LandTerritory>();
-            for(LandTerritory landTerritory: listOfLandTerritories){
+            LandTerritoryImpl[] listOfLandTerritories =  mapper.readValue(new File("Resource\\landTerritory.json"), new TypeReference<LandTerritory[]>(){});
+            landTerritoryNamesMap = new HashMap<String, LandTerritoryImpl>();
+            for(LandTerritoryImpl landTerritory: listOfLandTerritories){
                 landTerritoryNamesMap.put(landTerritory.getName(), landTerritory);
             }
             System.out.println(landTerritoryNamesMap.toString());
@@ -72,7 +83,7 @@ public class SetupGame {
         //TODO - same thing as land but for Sea
     }
 
-    public HashMap<String, LandTerritory> getLandTerritoryNameMap(){
+    public HashMap<String, LandTerritoryImpl> getLandTerritoryNameMap(){
         return this.landTerritoryNamesMap;
     }
 }

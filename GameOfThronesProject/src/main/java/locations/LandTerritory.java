@@ -9,9 +9,7 @@ import tokens.OrderToken;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Scott on 1/23/2017.
- */
+@Deprecated
 public class LandTerritory implements Territory {
 
     private String name;
@@ -22,6 +20,7 @@ public class LandTerritory implements Territory {
     private boolean isOccupied;
     private House houseOccupied;
     private OrderToken orderToken;
+    private LandTerritory bridgeConnection;
 
     private boolean powerToken;
     private int numGarrison;

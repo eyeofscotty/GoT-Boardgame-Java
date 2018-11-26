@@ -14,10 +14,12 @@ import tokens.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Created by Scott on 1/23/2017.
- */
-public class References {
+public class ReferenceConstant {
+
+    public static String KNIGHT = "Knight";
+    public static String INFANTRY = "Infantry";
+    public static String SIEGE_ENGINE = "Siege Engine";
+    public static String SHIP = "Ship";
 
     public static String STANNIS_BARATHEON = "Stannis Baratheon";
     public static String RENLY_BARATHEON = "Renly Baratheon";

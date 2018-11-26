@@ -1,20 +1,29 @@
 package tokens;
 
 /**
- * Created by Scott on 1/23/2017.
+ * Created by Scott on 1/20/2018.
  */
-public interface OrderToken {
-    //add these as a field in each house???
-    // void setToken(Territory territory);
-    //OrderToken getToken();
-    //void starToken();
-    String toString();
+public abstract class OrderToken {
 
-    boolean getStar();
+    private boolean star;
+    private boolean isAvailable;
 
-    boolean getIsAvailable();
+    OrderToken(){}
 
-    void setIsAvailable(boolean isAvailable);
+    public OrderToken(boolean star, boolean isAvailable){
+        this.star = star;
+        this.isAvailable = isAvailable;
+    }
 
-//    boolean Equals(OrderToken order);
+    public boolean getStar() {
+        return this.star;
+    }
+
+    public boolean getIsAvailable() {
+        return this.isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
+    }
 }

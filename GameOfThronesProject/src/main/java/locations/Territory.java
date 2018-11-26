@@ -6,6 +6,7 @@ import tokens.OrderToken;
 /**
  * Created by Scott on 1/23/2017.
  */
+@Deprecated
 public interface Territory {
 
     House getHouseOccupied();
@@ -19,5 +20,7 @@ public interface Territory {
     void setOrderToken(OrderToken orderToken);
 
     OrderToken getOrderToken();
+
+
 
 }

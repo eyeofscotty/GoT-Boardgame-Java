@@ -4,9 +4,7 @@ import tokens.OrderToken;
 
 import java.util.ArrayList;
 
-/**
- * Created by Scott on 1/23/2017.
- */
+//Make this an abstract class???? just to clean up getters/setters
 public interface House {
 
     String getName();

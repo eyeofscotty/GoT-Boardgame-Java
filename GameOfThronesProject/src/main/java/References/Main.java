@@ -6,9 +6,6 @@ import gameversion.StandardVersion;
 
 import java.io.IOException;
 
-/**
- * Created by Scott on 1/26/2017.
- */
 public class Main {
 
     public static void main(String[] args){
@@ -17,6 +14,6 @@ public class Main {
 //        standardVersion.initalize();
         SetupGame t = new SetupGame(new StandardVersion(), 3);
         t.setUp();
-        System.out.println(t.getLandTerritoryNameMap().get(References.WINTERFELL));
+        System.out.println(t.getLandTerritoryNameMap().get(ReferenceConstant.WINTERFELL));
     }
 }

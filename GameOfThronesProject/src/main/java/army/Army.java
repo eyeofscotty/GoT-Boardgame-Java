@@ -1,17 +1,38 @@
 package army;
 
 /**
- * Created by Scott on 1/23/2017.
+ * Created by Scott on 1/20/2018.
  */
-public interface Army {
+public abstract class Army {
+    private int attackPower;
+    private int defensePower;
+    private int cost;
+    private boolean routed;
 
-    int getAttackPower();
+    public Army(int attackPower, int defensePower, int cost, boolean routed){
+        this.attackPower = attackPower;
+        this.defensePower = defensePower;
+        this.cost = cost;
+        this.routed = routed;
+    }
 
-    int getDefensePower();
+    public int getAttackPower() {
+        return this.attackPower;
+    }
 
-    int getCost();
+    public int getDefensePower() {
+        return this.defensePower;
+    }
 
-    boolean getRouted();
+    public int getCost() {
+        return this.cost;
+    }
 
-    void setRouted(boolean routed);
+    public boolean getRouted() {
+        return this.routed;
+    }
+
+    public void setRouted(boolean routed) {
+        this.routed = routed;
+    }
 }
